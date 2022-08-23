@@ -7,11 +7,13 @@ import {
 
 import PrintSheet from '../components/PrintSheet.vue'
 
-const contatinerClass = import.meta.env.DEV ? 'container' : 'container-fluid'
+const contatinerClass = import.meta.env.DEV
+  ? 'py-5 container'
+  : 'container-fluid'
 </script>
 
 <template>
-  <article class="py-5" :class="contatinerClass">
+  <article :class="contatinerClass">
     <div class="input-group input-group-lg mb-3">
       <select
         v-model="selectedDepartmentModel"
