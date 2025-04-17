@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { selectedDepartment } from '../lib/departments'
+import { computed } from "vue";
+import { selectedDepartment } from "../lib/departments";
 
 const tables = computed(() =>
   [
-    'Department Liaison',
-    'COOP Committee Member',
+    "Department Liaison",
+    "COOP Committee Member",
+    selectedDepartment.value?.fields.HipaaCompliance,
     selectedDepartment.value?.fields.DirectorApproval,
     selectedDepartment.value?.fields.AdminApproval,
-    'Chair, COOP Committee',
-  ].filter(Boolean)
-)
+    "Chair, COOP Committee",
+  ].filter(Boolean),
+);
 </script>
 
 <template>
@@ -53,7 +54,7 @@ const tables = computed(() =>
       </p>
 
       <div v-for="table in tables">
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <tbody>
             <tr>
               <td width="20%" class="fw-bold">Approved:</td>
@@ -74,7 +75,7 @@ const tables = computed(() =>
 
 <style>
 #print-sheet {
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-size: 12pt;
 }
 </style>
